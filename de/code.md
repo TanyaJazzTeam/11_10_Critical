@@ -1,133 +1,133 @@
 # Contribute to the TensorFlow code
 
-Whether you are adding a loss function, improving test coverage, or writing an RFC for a major design change, this portion of the contributor guide will help you get started. Thank you for work and interest in improving TensorFlow.
+Unabhängig davon, ob Sie eine Verlustfunktion hinzufügen, die Testabdeckung verbessern oder einen RFC für eine größere Designänderung schreiben, dieser Teil des Leitfadens für Mitwirkende hilft Ihnen beim Einstieg. Vielen Dank für Ihre Arbeit und Ihr Interesse an der Verbesserung von TensorFlow.
 
 # 000
 
-## Before you get started
+## Bevor Sie beginnen
 
-Before you contribute source code to a TensorFlow project, please review the `CONTRIBUTING.md` file in the GitHub repo of the project. (For example, see the [CONTRIBUTING.md file for the core TensorFlow repo](https://github.com/tensorflow/tensorflow/blob/master/CONTRIBUTING.md).) All code contributors are required to sign a [Contributor License Agreement](https://cla.developers.google.com/clas) (CLA).
+Bevor Sie Quellcode zu einem TensorFlow-Projekt beitragen, überprüfen Sie bitte die `CONTRIBUTING.md` im GitHub-Repository des Projekts. (Siehe beispielsweise die [Datei CONTRIBUTING.md für das Kernrepo von TensorFlow](https://github.com/tensorflow/tensorflow/blob/master/CONTRIBUTING.md) .) Alle Code-Mitwirkenden müssen eine [Contributor License Agreement](https://cla.developers.google.com/clas) (CLA) unterzeichnen.
 
-To avoid duplicating work, please review [current RFCs](https://github.com/tensorflow/community/tree/master/rfcs) and contact the developers on the TensorFlow forums before you start work on a non-trivial feature. We are somewhat selective when deciding to add new functionality, and the best way to contribute and help the project is to work on known issues.
+Um Doppelarbeit zu vermeiden, lesen Sie bitte die [aktuellen RFCs](https://github.com/tensorflow/community/tree/master/rfcs) und kontaktieren Sie die Entwickler in den TensorFlow-Foren, bevor Sie mit der Arbeit an einer nicht trivialen Funktion beginnen. Wir sind bei der Entscheidung, neue Funktionen hinzuzufügen, etwas wählerisch, und der beste Weg, um zum Projekt beizutragen und zu helfen, besteht darin, an bekannten Problemen zu arbeiten.
 
-## Issues for new contributors
+## Probleme für neue Mitwirkende
 
-New contributors should look for the following tags when searching for a first contribution to the TensorFlow code base. We strongly recommend that new contributors tackle “easy” and "good first issue" projects first; this helps the contributor become familiar with the contribution workflow, and for the core devs to become acquainted with the contributor.
+Neue Mitwirkende sollten nach den folgenden Tags suchen, wenn sie nach einem ersten Beitrag zur TensorFlow-Codebasis suchen. Wir empfehlen dringend, dass neue Mitwirkende zuerst „einfache“ und „gute erste Ausgabe“-Projekte angehen; Dies hilft dem Beitragenden, sich mit dem Beitragsworkflow vertraut zu machen, und den Kernentwicklern, sich mit dem Beitragenden vertraut zu machen.
 
 - `good first issue`
 - `easy`
 - `contributions welcome`
 
-If you are interested in recruiting a team to help tackle a large-scale problem or a new feature, please email the [developers@ group](https://groups.google.com/a/tensorflow.org/forum/#!forum/developers) and review our current list of RFCs.
+Wenn Sie daran interessiert sind, ein Team zu rekrutieren, um ein umfangreiches Problem oder eine neue Funktion zu lösen, senden Sie bitte eine E-Mail an die [developer@-Gruppe](https://groups.google.com/a/tensorflow.org/forum/#!forum/developers) und sehen Sie sich unsere aktuelle Liste der RFCs an.
 
 ## Code review
 
-New features, bug fixes, and any other changes to the code base are subject to code review.
+Neue Funktionen, Fehlerbehebungen und alle anderen Änderungen an der Codebasis unterliegen einer Codeüberprüfung.
 
 Reviewing code contributed to the project as pull requests is a crucial component of TensorFlow development. We encourage anyone to start reviewing code submitted by other developers, especially if the feature is something that you are likely to use.
 
-Here are some questions to keep in mind during the code review process:
+Hier sind einige Fragen, die Sie während des Code-Review-Prozesses beachten sollten:
 
-- *Do we want this in TensorFlow?* Is it likely to be used? Do you, as a TensorFlow user, like the change and intend to use it? Is this change in the scope of TensorFlow? Will the cost of maintaining a new feature be worth its benefits?
+- *Wollen wir das in TensorFlow?* Ist es wahrscheinlich, dass es verwendet wird? Gefällt Ihnen als TensorFlow-Benutzer die Änderung und Sie möchten sie nutzen? Liegt diese Änderung im Umfang von TensorFlow? Werden die Kosten für die Wartung eines neuen Features seinen Nutzen wert sein?
 
-- *Is the code consistent with the TensorFlow API?* Are public functions, classes, and parameters well-named and intuitively designed?
+- *Stimmt der Code mit der TensorFlow-API überein?* Sind öffentliche Funktionen, Klassen und Parameter gut benannt und intuitiv gestaltet?
 
-- *Does it include documentation?* Are all public functions, classes, parameters, return types, and stored attributes named according to TensorFlow conventions and clearly documented? Is new functionality described in TensorFlow's documentation and illustrated with examples, whenever possible? Does the documentation render properly?
+- *Ist eine Dokumentation enthalten?* Sind alle öffentlichen Funktionen, Klassen, Parameter, Rückgabetypen und gespeicherten Attribute gemäß den TensorFlow-Konventionen benannt und klar dokumentiert? Werden neue Funktionen in der Dokumentation von TensorFlow beschrieben und nach Möglichkeit mit Beispielen illustriert? Wird die Dokumentation richtig gerendert?
 
-- *Is the code human-readable?* Is it low on redundancy? Should variable names be improved for clarity or consistency? Should comments be added? Should any comments be removed as unhelpful or extraneous?
+- *Ist der Code für Menschen lesbar?* Ist die Redundanz gering? Sollten Variablennamen aus Gründen der Klarheit oder Konsistenz verbessert werden? Sollen Kommentare hinzugefügt werden? Sollten Kommentare als nicht hilfreich oder irrelevant entfernt werden?
 
-- *Is the code efficient?* Could it be rewritten easily to run more efficiently?
+- *Ist der Code effizient?* Könnte es leicht umgeschrieben werden, um effizienter zu laufen?
 
-- Is the code *backwards compatible* with previous versions of TensorFlow?
+- Ist der Code *abwärtskompatibel* mit früheren Versionen von TensorFlow?
 
-- Will the new code add *new dependencies* on other libraries?
+- Wird der neue Code *neue Abhängigkeiten* von anderen Bibliotheken hinzufügen?
 
-## Test and improve test coverage
+## Testen und verbessern Sie die Testabdeckung
 
-High-quality unit testing is a corner-stone of the TensorFlow development process. For this purpose, we use Docker images. The test functions are appropriately named, and are responsible for checking the validity of algorithms as well as different options of the code.
+Hochwertige Komponententests sind ein Eckpfeiler des TensorFlow-Entwicklungsprozesses. Zu diesem Zweck verwenden wir Docker-Images. Die Testfunktionen werden entsprechend benannt und sind dafür verantwortlich, die Gültigkeit von Algorithmen sowie verschiedene Optionen des Codes zu überprüfen.
 
-All new features and bug fixes *must* include adequate test coverage. We also welcome contributions of new test cases or improvements to existing tests. If you discover that our existing tests are not complete — even if that is not currently causing a bug — please file an issue and, if possible, a pull request.
+Alle neuen Funktionen und Fehlerbehebungen *müssen* eine angemessene Testabdeckung beinhalten. Wir freuen uns auch über Beiträge zu neuen Testfällen oder Verbesserungen an bestehenden Tests. Wenn Sie feststellen, dass unsere bestehenden Tests nicht abgeschlossen sind – auch wenn dies derzeit keinen Fehler verursacht – reichen Sie bitte ein Problem und, wenn möglich, einen Pull-Request ein.
 
-For the specific details of testing procedures in each TensorFlow project, see the `README.md` and `CONTRIBUTING.md` files in the project repo on GitHub.
+Für die speziellen Einzelheiten der Verfahren in jedem TensorFlow Projekt zu testen, finden Sie in die `README.md` und `CONTRIBUTING.md` Dateien im Projekt - Repo auf GitHub.
 
 Of particular concerns in *adequate testing*:
 
 - Is *every public function and class* tested?
-- Are a *reasonable set of parameters*, their values, value types, and combinations tested?
-- Do the tests validate that the *code is correct*, and that it is *doing what the documentation says* the code is intended to do?
-- If the change is a bug fix, is a *non-regression test* included?
-- Do the tests *pass the continuous integration* build?
-- Do the tests *cover every line of code?* If not, are the exceptions reasonable and explicit?
+- Wird ein *vernünftiger Satz von Parametern* , deren Werten, Werttypen und Kombinationen getestet?
+- Bestätigen die Tests, dass der *Code korrekt* ist und das *tut, was in der Dokumentation angegeben ist, dass* der Code tun soll?
+- Wenn es sich bei der Änderung um eine Fehlerbehebung handelt, ist ein *Nicht-Regressionstest* enthalten?
+- Bestehen die Tests *den Continuous Integration* Build?
+- Decken die Tests *jede Codezeile ab?* Wenn nicht, sind die Ausnahmen sinnvoll und explizit?
 
-If you find any problems, please consider helping the contributor understand those problems and resolve them.
+Wenn Sie Probleme finden, ziehen Sie bitte in Betracht, dem Beitragenden zu helfen, diese Probleme zu verstehen und zu lösen.
 
-## Improve error messages or logs
+## Fehlermeldungen oder Protokolle verbessern
 
-We welcome contributions that improve error messages and logging.
+Wir freuen uns über Beiträge, die Fehlermeldungen und Protokollierung verbessern.
 
-## Contribution workflow
+## Beitragsworkflow
 
-Code contributions—bug fixes, new development, test improvement—all follow a GitHub-centered workflow. To participate in TensorFlow development, set up a GitHub account. Then:
+Codebeiträge – Bugfixes, Neuentwicklungen, Testverbesserungen – folgen alle einem GitHub-zentrierten Workflow. Um an der TensorFlow-Entwicklung teilzunehmen, richten Sie ein GitHub-Konto ein. Dann:
 
-1. Fork the repo you plan to work on. Go to the project repo page and use the *Fork* button. This will create a copy of the repo, under your username. (For more details on how to fork a repository see [this guide](https://help.github.com/articles/fork-a-repo/).)
+1. Forken Sie das Repo, an dem Sie arbeiten möchten. Gehen Sie zur Projekt-Repository-Seite und verwenden Sie die Schaltfläche *Fork.* Dadurch wird eine Kopie des Repositorys unter Ihrem Benutzernamen erstellt. (Weitere Informationen zum Forken eines Repositorys finden Sie in [diesem Handbuch](https://help.github.com/articles/fork-a-repo/) .)
 
-2. Clone down the repo to your local system.
+2. Klonen Sie das Repository auf Ihr lokales System.
 
     `$ git clone git@github.com:your-user-name/project-name.git`
 
-3. Create a new branch to hold your work.
+3. Erstellen Sie einen neuen Zweig, um Ihre Arbeit zu speichern.
 
     `$ git checkout -b new-branch-name`
 
-4. Work on your new code. Write and run tests.
+4. Arbeiten Sie an Ihrem neuen Code. Tests schreiben und ausführen.
 
-5. Commit your changes.
+5. Bestätigen Sie Ihre Änderungen.
 
     `$ git add -A`
 
     `$ git commit -m "commit message here"`
 
-6. Push your changes to your GitHub repo.
+6. Übertragen Sie Ihre Änderungen per Push in Ihr GitHub-Repository.
 
     `$ git push origin branch-name`
 
-7. Open a *Pull Request* (PR). Go to the original project repo on GitHub. There will be a message about your recently pushed branch, asking if you would like to open a pull request. Follow the prompts, *compare across repositories*, and submit the PR. This will send an email to the committers. You may want to consider sending an email to the mailing list for more visibility. (For more details, see the [GitHub guide on PRs](https://help.github.com/articles/creating-a-pull-request-from-a-fork).
+7. Öffnen Sie einen *Pull-Request* (PR). Rufen Sie das ursprüngliche Projekt-Repository auf GitHub auf. Es wird eine Nachricht zu Ihrem kürzlich gepushten Branch angezeigt, in der Sie gefragt werden, ob Sie einen Pull-Request öffnen möchten. Folgen Sie den Anweisungen, *vergleichen* Sie die Repositorys und senden Sie die PR. Dadurch wird eine E-Mail an die Committer gesendet. Sie können in Erwägung ziehen, eine E-Mail an die Mailingliste zu senden, um mehr Sichtbarkeit zu erzielen. (Weitere Informationen finden Sie im [GitHub-Leitfaden zu PRs](https://help.github.com/articles/creating-a-pull-request-from-a-fork) .
 
-8. Maintainers and other contributors will *review your PR*. Please participate in the conversation, and try to *make any requested changes*. Once the PR is approved, the code will be merged.
+8. Betreuer und andere Mitwirkende werden *Ihre PR überprüfen* . Bitte nehmen Sie an der Konversation teil und versuchen Sie, *die gewünschten Änderungen vorzunehmen* . Sobald die PR genehmigt wurde, wird der Code zusammengeführt.
 
-*Before working on your next contribution*, make sure your local repository is up to date.
+*Bevor Sie an Ihrem nächsten Beitrag arbeiten* , stellen Sie sicher, dass Ihr lokales Repository auf dem neuesten Stand ist.
 
-1. Set the upstream remote. (You only have to do this once per project, not every time.)
+1. Stellen Sie die Upstream-Fernbedienung ein. (Sie müssen dies nur einmal pro Projekt tun, nicht jedes Mal.)
 
     `$ git remote add upstream git@github.com:tensorflow/project-repo-name`
 
-2. Switch to the local master branch.
+2. Wechseln Sie in den lokalen Master-Zweig.
 
     `$ git checkout master`
 
-3. Pull down the changes from upstream.
+3. Ziehen Sie die Änderungen aus dem Upstream herunter.
 
     `$ git pull upstream master`
 
-4. Push the changes to your GitHub account. (Optional, but a good practice.)
+4. Übertragen Sie die Änderungen auf Ihr GitHub-Konto. (Optional, aber eine gute Übung.)
 
     `$ git push origin master`
 
-5. Create a new branch if you are starting new work.
+5. Erstellen Sie eine neue Filiale, wenn Sie eine neue Arbeit beginnen.
 
     `$ git checkout -b branch-name`
 
-Additional `git` and GitHub resources:
+Zusätzliche `git` und GitHub-Ressourcen:
 
-- [Git documentation](https://git-scm.com/documentation)
-- [Git development workflow](https://docs.scipy.org/doc/numpy/dev/gitwash/development_workflow.html)
-- [Resolving merge conflicts](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/).
+- [Git-Dokumentation](https://git-scm.com/documentation)
+- [Git-Entwicklungsworkflow](https://docs.scipy.org/doc/numpy/dev/gitwash/development_workflow.html)
+- [Auflösen von Zusammenführungskonflikten](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/) .
 
-## Contributor checklist
+## Checkliste für Mitwirkende
 
-- Read contributing guidelines.
-- Read the Code of Conduct.
-- Ensure you have signed the Contributor License Agreement (CLA).
-- Check if your changes are consistent with the guidelines.
-- Check if your changes are consistent with the TensorFlow coding style.
-- Run unit tests.
+- Lesen Sie die Richtlinien für Beiträge.
+- Lesen Sie den Verhaltenskodex.
+- Stellen Sie sicher, dass Sie die Contributor License Agreement (CLA) unterzeichnet haben.
+- Prüfen Sie, ob Ihre Änderungen den Richtlinien entsprechen.
+- Überprüfen Sie, ob Ihre Änderungen mit dem TensorFlow-Codierungsstil übereinstimmen.
+- Führen Sie Komponententests durch.
