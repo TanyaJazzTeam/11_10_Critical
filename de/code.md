@@ -12,6 +12,8 @@ Um Doppelarbeit zu vermeiden, lesen Sie bitte die [aktuellen RFCs](https://githu
 
 ## Probleme für neue Mitwirkende
 
+# 111
+
 Neue Mitwirkende sollten nach den folgenden Tags suchen, wenn sie nach einem ersten Beitrag zur TensorFlow-Codebasis suchen. Wir empfehlen dringend, dass neue Mitwirkende zuerst „einfache“ und „gute erste Ausgabe“-Projekte angehen; Dies hilft dem Beitragenden, sich mit dem Beitragsworkflow vertraut zu machen, und den Kernentwicklern, sich mit dem Beitragenden vertraut zu machen.
 
 - `good first issue`
