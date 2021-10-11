@@ -90,7 +90,7 @@ OneDrive | [plugins / onedrive / README.md] [PlOd]
 Medio | [plugins / medium / README.md] [PlMe]
 Google analitico | [plugins / googleanalytics / README.md] [PlGa]
 
-### Desarrollo
+
 
 ¿Quieres contribuir? ¡Excelente!
 
