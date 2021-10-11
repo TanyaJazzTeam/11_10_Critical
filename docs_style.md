@@ -10,7 +10,7 @@
     [Google Developer Docs Style Guide](https://developers.google.com/style/highlights)
     is helpful.
 
-## Markdown
+
 
 With a few exceptions, TensorFlow uses a Markdown syntax similiar to
 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)
